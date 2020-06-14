@@ -43,8 +43,6 @@ if [[ "$wm_id" == '' ]] ; then
   exit 2
 fi
 
-exit
-
 if $up ; then
   xdotool mouseup --window $(xdotool search --class "$wm_class") "$button"
   exit 0
