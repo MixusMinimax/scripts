@@ -44,16 +44,16 @@ if [[ "$wm_id" == '' ]] ; then
 fi
 
 if $up ; then
-  xdotool mouseup --window $(xdotool search --class "$wm_class") "$button"
+  xdotool mouseup --window "$wm_id" "$button"
   exit 0
 fi
 
 if $down ; then
-  xdotool mousedown --window $(xdotool search --class "$wm_class") "$button"
+  xdotool mousedown --window "$wm_id" "$button"
   exit 0
 fi
 
 while true; do
-  xdotool click --window $(xdotool search --class "$wm_class") "$button"
+  xdotool click --window "$wm_id" "$button"
   sleep "$interval"
 done
